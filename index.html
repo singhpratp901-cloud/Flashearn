@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FLASH 🚀</title>
+
+<!-- ================= META PIXEL ================= -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1788725595793493');
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+<img height="1" width="1"
+style="display:none"
+src="https://www.facebook.com/tr?id=1788725595793493&ev=PageView&noscript=1"/>
+</noscript>
+<!-- =============== END META PIXEL =============== -->
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 50% 25%, #2a1016 0%, #120b12 35%, #08090e 75%);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* TOP BAR */
+.topbar{
+    height:62px;
+    background:#fff;
+    color:#222;
+    display:flex;
+    align-items:center;
+    padding:0 18px;
+    gap:18px;
+}
+
+.close{
+    font-size:30px;
+    font-weight:300;
+}
+
+.down{
+    font-size:29px;
+    margin-top:-5px;
+}
+
+.site-info{
+    flex:1;
+    text-align:center;
+    line-height:1.15;
+}
+
+.site-name{
+    font-family:Georgia, serif;
+    font-size:19px;
+    font-weight:bold;
+}
+
+.site-url{
+    font-size:14px;
+    margin-top:4px;
+}
+
+.share{
+    font-size:27px;
+}
+
+.menu{
+    font-size:29px;
+}
+
+/* MAIN */
+.main{
+    min-height:calc(100vh - 62px);
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:245px 16px 50px;
+    position:relative;
+}
+
+.main:before{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:rgba(255,55,70,.10);
+    filter:blur(100px);
+    top:100px;
+    left:50%;
+    transform:translateX(-50%);
+    pointer-events:none;
+}
+
+.card{
+    width:100%;
+    max-width:560px;
+    background:rgba(20,22,32,.94);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:30px;
+    padding:48px 40px 40px;
+    position:relative;
+    z-index:2;
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.05);
+    text-align:center;
+}
+
+/* LABEL */
+.label{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    color:#9b9ba4;
+    font-size:15px;
+    letter-spacing:2px;
+    margin-bottom:22px;
+}
+
+.dot{
+    width:9px;
+    height:9px;
+    background:#ff553f;
+    border-radius:50%;
+    box-shadow:0 0 12px #ff553f;
+}
+
+/* PROFILE IMAGE */
+.profile-wrap{
+    width:170px;
+    height:170px;
+    margin:0 auto 27px;
+    border-radius:50%;
+    padding:5px;
+    background:linear-gradient(
+        135deg,
+        #ff573f,
+        #633b52,
+        #2b4c78
+    );
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.25),
+        0 0 35px rgba(255,70,55,.25);
+}
+
+.profile{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    border:5px solid #151722;
+}
+
+.title{
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:39px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    color:#a9a9b1;
+    font-size:17px;
+    line-height:1.5;
+    max-width:390px;
+    margin:0 auto 25px;
+}
+
+/* VERIFIED */
+.verified{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    border:1px solid #a17d3c;
+    color:#e7bc64;
+    padding:11px 22px;
+    border-radius:30px;
+    font-weight:bold;
+    letter-spacing:.5px;
+    margin-bottom:32px;
+}
+
+.check{
+    width:18px;
+    height:18px;
+    background:#ff694f;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+}
+
+/* JOIN BUTTON */
+.join{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:17px;
+    width:100%;
+    min-height:82px;
+    border-radius:17px;
+    background:linear-gradient(135deg,#ff624e,#ff4b3b);
+    color:#fff;
+    text-decoration:none;
+    font-size:25px;
+    font-weight:bold;
+    box-shadow:
+        0 12px 30px rgba(255,78,59,.27),
+        inset 0 1px 0 rgba(255,255,255,.18);
+    transition:.2s ease;
+}
+
+.join:hover{
+    transform:translateY(-2px);
+    box-shadow:0 16px 35px rgba(255,78,59,.38);
+}
+
+.telegram{
+    font-size:35px;
+}
+
+.arrow{
+    font-size:30px;
+}
+
+/* STATUS */
+.status{
+    margin:25px 0 38px;
+    color:#92929b;
+    font-size:16px;
+}
+
+.ready{
+    color:#e5bb65;
+    font-weight:bold;
+}
+
+/* REF */
+.ref{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    color:#7f8089;
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:30px;
+}
+
+.ref:before,
+.ref:after{
+    content:"";
+    height:1px;
+    background:#30323d;
+    flex:1;
+}
+
+/* INFO BOXES */
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.feature{
+    background:#222532;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    padding:22px 8px;
+}
+
+.feature strong{
+    display:block;
+    font-size:20px;
+    margin-bottom:7px;
+}
+
+.feature span{
+    color:#999ba5;
+    font-size:11px;
+    letter-spacing:.8px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+    .topbar{
+        height:61px;
+        padding:0 12px;
+        gap:13px;
+    }
+
+    .close{
+        font-size:28px;
+    }
+
+    .down{
+        font-size:26px;
+    }
+
+    .site-name{
+        font-size:17px;
+    }
+
+    .site-url{
+        font-size:12px;
+    }
+
+    .share{
+        font-size:23px;
+    }
+
+    .menu{
+        font-size:26px;
+    }
+
+    .main{
+        padding:245px 14px 35px;
+    }
+
+    .card{
+        padding:40px 22px 25px;
+        border-radius:27px;
+    }
+
+    .profile-wrap{
+        width:150px;
+        height:150px;
+    }
+
+    .title{
+        font-size:34px;
+    }
+
+    .subtitle{
+        font-size:15px;
+    }
+
+    .join{
+        min-height:72px;
+        font-size:21px;
+    }
+
+    .telegram{
+        font-size:30px;
+    }
+
+    .features{
+        gap:9px;
+    }
+
+    .feature{
+        padding:18px 5px;
+    }
+
+    .feature strong{
+        font-size:17px;
+    }
+
+    .feature span{
+        font-size:9px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BROWSER STYLE BAR -->
+<div class="topbar">
+
+    <div class="close">×</div>
+    <div class="down">⌄</div>
+
+    <div class="site-info">
+        <div class="site-name">FLASH 🚀</div>
+        <div class="site-url">flash-channel.website</div>
+    </div>
+
+    <div class="share">⌯</div>
+    <div class="menu">⋮</div>
+
+</div>
+
+
+<main class="main">
+
+    <div class="card">
+
+        <div class="label">
+            <span class="dot"></span>
+            FLASH
+        </div>
+
+
+        <!-- YOUR IMAGE -->
+        <div class="profile-wrap">
+            <img
+                class="profile"
+                src="https://i.postimg.cc/mk5q2kQ4/IMG-20261008-222734-576.jpg"
+                alt="FLASH">
+        </div>
+
+
+        <h1 class="title">
+            FLASH 🚀
+        </h1>
+
+
+        <p class="subtitle">
+            Daily market levels and setups. Free to join.
+        </p>
+
+
+        <div class="verified">
+            <span class="check">✓</span>
+            VERIFIED CHANNEL
+        </div>
+
+
+        <!-- TELEGRAM JOIN -->
+        <a
+            class="join"
+            href="https://t.me/+Iqfwytg-MLhhNzll"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="trackJoin()"
+        >
+            <span class="telegram">➤</span>
+            <span>Join Now</span>
+            <span class="arrow">→</span>
+        </a>
+
+
+        <div class="status">
+            Status:
+            <span class="ready">Ready</span>
+            · opens in Telegram
+        </div>
+
+
+        <div class="ref">
+            REF 386741
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature">
+                <strong>24/7</strong>
+                <span>ACTIVE</span>
+            </div>
+
+            <div class="feature">
+                <strong>Free</strong>
+                <span>TO JOIN</span>
+            </div>
+
+            <div class="feature">
+                <strong>1-tap</strong>
+                <span>ACCESS</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script>
+/* META PIXEL - TELEGRAM JOIN EVENT */
+function trackJoin(){
+
+    if(typeof fbq === "function"){
+        fbq('track', 'Lead');
+
+        fbq('trackCustom', 'TelegramJoin', {
+            channel: 'FLASH'
+        });
+    }
+
+}
+</script>
+
+</body>
+</html>
